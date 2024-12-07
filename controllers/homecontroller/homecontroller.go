@@ -22,3 +22,12 @@ func Login(w http.ResponseWriter, r *http.Request) {
 
 	temp.Execute(w, nil)
 }
+
+func Admin(w http.ResponseWriter, r *http.Request) {
+	temp, err := template.ParseFiles("views/home/admin.html")
+	if err != nil {
+		panic(err)
+	}
+
+	temp.Execute(w, nil)
+}

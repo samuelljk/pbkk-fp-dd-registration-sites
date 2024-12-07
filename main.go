@@ -17,6 +17,8 @@ func main() {
 
 	http.HandleFunc("/", homecontroller.Welcome)
 	http.HandleFunc("/login", homecontroller.Login)
+	http.HandleFunc("/admin", homecontroller.Admin)
+
 	http.HandleFunc("/register", applicationcontroller.Register)
 	
 	log.Println("Server started on: http://localhost:8080")
