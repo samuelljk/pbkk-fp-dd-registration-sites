@@ -516,7 +516,7 @@
           </nav>
         </div>
       </div>
-
+      <!-- Sidebar for Mobile -->
       <div
         class="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden"
       >
@@ -550,7 +550,6 @@
           />
         </a>
       </div>
-
       <main class="py-10 lg:pl-72">
         <div class="px-4 sm:px-6 lg:px-8">
           <!-- Your content -->
@@ -559,6 +558,16 @@
               Dashboard
             </h1>
           </div>
+
+          {{range .details}}
+          <p><strong>First Name:</strong> {{.User.First_name}}</p>
+          <p><strong>Last Name:</strong> {{.User.Last_name}}</p>
+          <p><strong>University:</strong> {{.University.Name}}</p>
+          <p><strong>Degree:</strong> {{.Degree.Name}}</p>
+          <p><strong>Status:</strong> {{.Application.Status}}</p>
+          <hr />
+          {{end}}
+
           <div>
             <div class="py-4 px-4 sm:px-0">
               <h3 class="text-base/7 font-semibold text-gray-900">
@@ -571,16 +580,24 @@
             <div class="mt-6 border-t border-gray-100">
               <dl class="divide-y divide-gray-100">
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-                  <dt class="text-sm/6 font-medium text-gray-900">Full name</dt>
+                  <dt class="text-sm/6 font-medium text-gray-900">
+                    First name
+                  </dt>
                   <dd
                     class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
                   >
-                    Margot Foster
+                    {{ .User.First_name | html }}
                   </dd>
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-sm/6 font-medium text-gray-900">Last name</dt>
+                  <p class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0">
+                    Margot Foster
+                  </p>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt class="text-sm/6 font-medium text-gray-900">
-                    Application for
+                    Email Address
                   </dt>
                   <dd
                     class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
@@ -590,7 +607,7 @@
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt class="text-sm/6 font-medium text-gray-900">
-                    Email address
+                    University
                   </dt>
                   <dd
                     class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
@@ -600,7 +617,25 @@
                 </div>
                 <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
                   <dt class="text-sm/6 font-medium text-gray-900">
-                    Salary expectation
+                    Department
+                  </dt>
+                  <dd
+                    class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+                  >
+                    $120,000
+                  </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-sm/6 font-medium text-gray-900">Major</dt>
+                  <dd
+                    class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+                  >
+                    $120,000
+                  </dd>
+                </div>
+                <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                  <dt class="text-sm/6 font-medium text-gray-900">
+                    Study Duration
                   </dt>
                   <dd
                     class="mt-1 text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"

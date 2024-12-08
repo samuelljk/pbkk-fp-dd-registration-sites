@@ -1,7 +1,5 @@
 package entities
 
-import "time"
-
 type User struct {
 	Id         uint
 	Username   string
@@ -10,6 +8,6 @@ type User struct {
 	Role       string
 	First_name string
 	Last_name  string
-	Created_at time.Time
-	Updated_at time.Time
+	Created_at []uint8
+	Updated_at []uint8
 }
