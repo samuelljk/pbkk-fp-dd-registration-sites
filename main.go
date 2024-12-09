@@ -30,11 +30,7 @@ func main() {
 
 	// Admin
 	http.HandleFunc("/admin-dash", admindashboard.Dashboard)
-	http.HandleFunc("/admin-uni", adminuniversity.Dashboard)
-
-
-	
-
+	http.HandleFunc("/admin-uni", adminuniversity.Index)
 
 	log.Println("Server started on: http://localhost:8080")
 	http.ListenAndServe(":8080", nil)

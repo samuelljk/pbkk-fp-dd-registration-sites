@@ -5,6 +5,49 @@ import (
 	"pbkk-fp-dd-registration-sites/entities"
 )
 
+func GetUni() []entities.University {
+	rows, err := config.DB.Query("SELECT * FROM universities")
+	if err != nil {
+		panic(err.Error())
+	}
+
+	defer rows.Close()
+
+	var universities []entities.University
+
+	for rows.Next() {
+		var university entities.University
+		err := rows.Scan(&university.Id, &university.Name, &university.Country)
+		if err != nil {
+			panic(err)
+		}
+
+		universities = append(universities, university)
+	}
+
+	return universities
+}
+
+func AddUni(university entities.University) bool {
+	result, err := config.DB.Exec(`
+		INSERT INTO universities (name, country) 
+		VALUE (?, ?)`,
+		university.Name,
+		university.Country,
+	)
+
+	if err != nil {
+		panic(err)
+	}
+
+	lastInsertId, err := result.LastInsertId()
+	if err != nil {
+		panic(err)
+	}
+
+	return lastInsertId > 0
+}
+
 type ApplicationDetails struct {
 	Application entities.Application
 	User        entities.User
