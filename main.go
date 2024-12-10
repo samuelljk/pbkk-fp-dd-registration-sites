@@ -6,6 +6,7 @@ import (
 	"pbkk-fp-dd-registration-sites/config"
 	"pbkk-fp-dd-registration-sites/controllers/admindashboard"
 	"pbkk-fp-dd-registration-sites/controllers/adminuniversity"
+	"pbkk-fp-dd-registration-sites/controllers/adminusercontroller"
 	"pbkk-fp-dd-registration-sites/controllers/applicationcontroller"
 	"pbkk-fp-dd-registration-sites/controllers/homecontroller"
 	"pbkk-fp-dd-registration-sites/controllers/userdashboard"
@@ -29,6 +30,7 @@ func main() {
 	http.HandleFunc("/user-dash", userdashboard.GetData)
 
 	// Admin
+	http.HandleFunc("/admin-user", adminusercontroller.Dashboard)
 	http.HandleFunc("/admin-dash", admindashboard.Dashboard)
 	http.HandleFunc("/admin-uni", adminuniversity.Index)
 

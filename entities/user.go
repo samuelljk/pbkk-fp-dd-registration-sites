@@ -5,6 +5,7 @@ type User struct {
 	Username   string
 	Password   string
 	Email      string
+	Batch      uint
 	Role       string
 	First_name string
 	Last_name  string
