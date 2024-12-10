@@ -16,12 +16,12 @@
               <div class="flex shrink-0 items-center">
                 <img
                   class="block h-8 w-auto lg:hidden"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  src="https://i.ibb.co.com/2gLgWws/image.png"
                   alt="Your Company"
                 />
                 <img
                   class="hidden h-8 w-auto lg:block"
-                  src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                  src="https://i.ibb.co.com/2gLgWws/image.png"
                   alt="Your Company"
                 />
               </div>
@@ -76,32 +76,31 @@
                   >
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img
-                      class="size-8 rounded-full"
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                      alt=""
-                    />
+                    <!-- Replaced <img> with SVG User Icon -->
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-6 w-6 text-gray-500"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M12 12c2.761 0 5-2.239 5-5S14.761 2 12 2 7 4.239 7 7s2.239 5 5 5zm0 2c-3.33 0-10 1.665-10 5v3h20v-3c0-3.335-6.67-5-10-5z"
+                      />
+                    </svg>
                   </button>
                 </div>
 
-                <!--
-              Dropdown menu, show/hide based on menu state.
-
-              Entering: "transition ease-out duration-200"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
+                <!-- Dropdown menu, hidden by default -->
                 <div
-                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none"
+                  id="user-menu"
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none hidden"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby="user-menu-button"
                   tabindex="-1"
                 >
-                  <!-- Active: "bg-gray-100 outline-none", Not Active: "" -->
+                  <!-- Dropdown Links -->
                   <a
                     href="#"
                     class="block px-4 py-2 text-sm text-gray-700"
@@ -299,7 +298,7 @@
                             scope="col"
                             class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                           >
-                            Title
+                            Batch
                           </th>
                           <th
                             scope="col"
@@ -323,7 +322,7 @@
                             scope="col"
                             class="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                           >
-                            Major
+                            Duration
                           </th>
                           <th
                             scope="col"
@@ -338,40 +337,233 @@
                           <td
                             class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"
                           >
-                            Lindsay Walton
+                            John Doe
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Front-end Developer
+                            2022
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            lindsay.walton@example.com
+                            doejohn@gmail.com
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Member
+                            Asia University
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Member
+                            Computer Science (IoT)
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Member
+                            2 Years
                           </td>
                           <td
-                            class="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-3"
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
                           >
                             <a
                               href="#"
                               class="text-indigo-600 hover:text-indigo-900"
-                              >Edit<span class="sr-only"
+                              >Details<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a href="#" class="text-red-600 hover:text-red-900"
+                              >Delete<span class="sr-only"
+                                >, Lindsay Walton</span
+                              ></a
+                            >
+                          </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                          <td
+                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"
+                          >
+                            John Doe
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2022
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            doejohn@gmail.com
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Asia University
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Computer Science (IoT)
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2 Years
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Details<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a href="#" class="text-red-600 hover:text-red-900"
+                              >Delete<span class="sr-only"
+                                >, Lindsay Walton</span
+                              ></a
+                            >
+                          </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                          <td
+                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"
+                          >
+                            John Doe
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2022
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            doejohn@gmail.com
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Asia University
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Computer Science (IoT)
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2 Years
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Details<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a href="#" class="text-red-600 hover:text-red-900"
+                              >Delete<span class="sr-only"
+                                >, Lindsay Walton</span
+                              ></a
+                            >
+                          </td>
+                        </tr>
+                        <tr class="even:bg-gray-50">
+                          <td
+                            class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"
+                          >
+                            John Doe
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2022
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            doejohn@gmail.com
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Asia University
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            Computer Science (IoT)
+                          </td>
+                          <td
+                            class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
+                          >
+                            2 Years
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Details<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a
+                              href="#"
+                              class="text-indigo-600 hover:text-indigo-900"
+                              >Edit<span class="sr-only"></span
+                            ></a>
+                          </td>
+                          <td
+                            class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
+                          >
+                            <a href="#" class="text-red-600 hover:text-red-900"
+                              >Delete<span class="sr-only"
                                 >, Lindsay Walton</span
                               ></a
                             >
@@ -416,6 +608,34 @@
           userMenu.classList.add("hidden");
         }
       });
+    });
+
+    // Toggle dropdown menu on button click
+    document
+      .getElementById("user-menu-button")
+      .addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent event from bubbling up to the document
+        document.getElementById("user-menu").classList.toggle("hidden");
+      });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+      const userMenu = document.getElementById("user-menu");
+      const userMenuButton = document.getElementById("user-menu-button");
+
+      if (
+        !userMenu.contains(event.target) &&
+        !userMenuButton.contains(event.target)
+      ) {
+        userMenu.classList.add("hidden");
+      }
+    });
+
+    // Optionally, close dropdown when pressing the Escape key
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        document.getElementById("user-menu").classList.add("hidden");
+      }
     });
   </script>
 </html>
