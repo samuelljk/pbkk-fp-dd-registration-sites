@@ -27,3 +27,36 @@ func GetUser() []entities.User{
 
 	return users
 }
+
+type UniversityDegree struct {
+	University 	entities.University
+	Degree    	entities.Degree
+}
+
+
+func GetUniDegreeData() ([]UniversityDegree, error){
+	rows, err := config.DB.Query(`SELECT * FROM universities JOIN degrees ON universities.university_id = degrees.university_id`)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	var UniversityDegrees []UniversityDegree
+
+	for rows.Next() {
+		var university entities.University
+		var degree entities.Degree
+		err := rows.Scan(&university.Id, &university.Name, &university.Country, &degree.Id, &degree.University_id, &degree.Name, &degree.Department, &degree.Duration)
+		if err != nil {
+			return nil, err
+		}
+		UniversityDegrees = append(UniversityDegrees, UniversityDegree{
+			University: university,
+			Degree: degree,
+		})
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+	return UniversityDegrees, nil
+}

@@ -3,7 +3,7 @@ package userdashboard
 import (
 	"log"
 	"net/http"
-	"pbkk-fp-dd-registration-sites/models/applicationmodel/admindashboardmodel"
+	"pbkk-fp-dd-registration-sites/models/admindashboardmodel"
 	"text/template"
 )
 

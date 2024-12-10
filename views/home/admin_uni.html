@@ -266,6 +266,7 @@
         </div>
       </nav>
     </div>
+
     <div class="py-10">
       <header>
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -437,13 +438,185 @@
                         </td>
                       </tr>
                       {{ end }}
-                      <!-- More people... -->
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Degree -->
+        <!-- Degree -->
+        <div class="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+          {{ range $uni := .unidegrees }}
+          <div class="bg-white shadow-md rounded-lg p-6 mb-6">
+            <div
+              class="flex flex-col sm:flex-row sm:justify-between sm:items-center"
+            >
+              <div class="mb-4 sm:mb-0">
+                <h2 class="text-xl font-bold text-blue-700">
+                  Degrees Offered at
+                  <span class="text-blue-900">{{ $uni.University.Name }}</span>
+                </h2>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="flex items-center space-x-2 rounded-lg bg-green-500 hover:bg-green-600 text-white px-4 py-2 text-sm font-medium shadow transition"
+                  id="addDegreeButton"
+                >
+                  <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4v16m8-8H4"
+                    />
+                  </svg>
+                  <span>Add Degree</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Add University Modal -->
+            <div
+              id="addUniversityModal"
+              class="fixed inset-0 z-50 hidden overflow-y-auto bg-black bg-opacity-30 flex items-center justify-center"
+            >
+              <div
+                class="bg-white rounded-lg shadow-lg w-full max-w-lg mx-4 p-6"
+              >
+                <h3
+                  class="text-2xl font-semibold text-gray-800 mb-4 text-center"
+                  id="modal-title"
+                >
+                  Add University
+                </h3>
+                <form
+                  id="addUniversityForm"
+                  action="/admin-uni"
+                  method="POST"
+                  class="space-y-4"
+                >
+                  <div>
+                    <label
+                      for="universityName"
+                      class="block text-sm font-medium text-gray-700"
+                      >University Name</label
+                    >
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 px-3 py-2"
+                      placeholder="Enter university name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="country"
+                      class="block text-sm font-medium text-gray-700"
+                      >Country</label
+                    >
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500 px-3 py-2"
+                      placeholder="Enter country"
+                      required
+                    />
+                  </div>
+                  <div class="flex justify-end space-x-3">
+                    <button
+                      type="button"
+                      class="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition"
+                      onclick="closeModal()"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      class="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 transition"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th
+                        scope="col"
+                        class="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase tracking-wider"
+                      >
+                        Name
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase tracking-wider"
+                      >
+                        Department
+                      </th>
+                      <th
+                        scope="col"
+                        class="px-6 py-3 text-left text-sm font-medium text-gray-700 uppercase tracking-wider"
+                      >
+                        Duration
+                      </th>
+                      <th scope="col" class="px-6 py-3 relative">
+                        <span class="sr-only">Actions</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    {{ range $deg := $uni.Degrees }}
+                    <tr>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"
+                      >
+                        {{ $deg.Name }}
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"
+                      >
+                        {{ $deg.Department }}
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-600"
+                      >
+                        {{ $deg.Duration }} Years
+                      </td>
+                      <td
+                        class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                      >
+                        <a
+                          href="#"
+                          class="text-blue-600 hover:text-blue-900 flex items-center space-x-1"
+                        >
+                          <span>Edit</span>
+                        </a>
+                      </td>
+                    </tr>
+                    {{ end }}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          {{ end }}
         </div>
       </main>
     </div>

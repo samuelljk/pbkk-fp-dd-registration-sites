@@ -24,7 +24,7 @@ func main() {
 	http.HandleFunc("/login", homecontroller.Login)
 	
 	// Application
-	http.HandleFunc("/register", applicationcontroller.Register)
+	http.HandleFunc("/register", applicationcontroller.UniDegreeData)
 
 	// User
 	http.HandleFunc("/user-dash", userdashboard.GetData)

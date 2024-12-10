@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 	"pbkk-fp-dd-registration-sites/entities"
-	"pbkk-fp-dd-registration-sites/models/applicationmodel/admindashboardmodel"
+	"pbkk-fp-dd-registration-sites/models/admindashboardmodel"
 	"text/template"
 )
 
@@ -20,8 +20,16 @@ func Dashboard(w http.ResponseWriter, r *http.Request) {
 func Index(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		universities := admindashboardmodel.GetUni()
+		unidegrees, err := admindashboardmodel.GetUniDegree()
+		log.Println(unidegrees)
+		log.Println("X_X")
+		if err != nil {
+			panic(err)
+		}
+
 		data := map[string]any{
 			"universities": universities,
+			"unidegrees": unidegrees,
 		}
 	
 		temp, err := template.ParseFiles("views/home/admin_uni.html")

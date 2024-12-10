@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,15 +22,12 @@
               class="h-16 w-auto"
             />
           </a>
-          <!-- Vertical Divider Line -->
           <div class="border-l border-gray-300 h-8"></div>
-          <!-- Enhanced Text -->
           <h1 class="text-3xl font-serif text-black">
             IF-DDRS | Online Application
           </h1>
         </div>
       </nav>
-      <!-- Divider Line Below Header -->
       <div class="w-full border-t border-gray-300"></div>
     </header>
 
@@ -43,15 +40,15 @@
             <h1 class="text-xl font-semibold text-gray-900 mb-4">
               Create Account
             </h1>
-            <hr />
             <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <!-- Username -->
               <div class="sm:col-span-4">
                 <label
                   for="username"
                   class="block text-sm font-medium text-gray-900"
-                  >Username</label
                 >
+                  Username
+                </label>
                 <div class="mt-2">
                   <div
                     class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:outline-indigo-600"
@@ -61,27 +58,27 @@
                       name="username"
                       id="username"
                       class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder-gray-400 focus:outline-none sm:text-sm"
-                      placeholder=""
                     />
                   </div>
                 </div>
+
                 <!-- Password -->
-                <div class="sm:col-span-4">
+                <div class="sm:col-span-4 pt-4">
                   <label
-                    for="username"
-                    class="block text-sm font-medium text-gray-900 pt-4"
-                    >Password</label
+                    for="password"
+                    class="block text-sm font-medium text-gray-900"
                   >
+                    Password
+                  </label>
                   <div class="mt-2">
                     <div
                       class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300 focus-within:outline focus-within:outline-2 focus-within:outline-indigo-600"
                     >
                       <input
-                        type="text"
-                        name="username"
-                        id="username"
+                        type="password"
+                        name="password"
+                        id="password"
                         class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder-gray-400 focus:outline-none sm:text-sm"
-                        placeholder=""
                       />
                     </div>
                   </div>
@@ -91,23 +88,22 @@
           </div>
 
           <!-- Personal Information Section -->
-          <div class="border-b border-gray-900/10 pb- 12">
+          <div class="border-b border-gray-900/10 pb-12">
             <h1 class="text-xl font-semibold text-gray-900">
               Personal Information
             </h1>
             <p class="mt-1 text-sm text-gray-600 mb-4">
-              Make sure that data are the same with one in your official
-              documents.
+              Make sure that the data matches your official documents.
             </p>
-            <hr />
             <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
               <!-- First Name -->
               <div class="sm:col-span-3">
                 <label
                   for="first-name"
                   class="block text-sm font-medium text-gray-900"
-                  >First Name</label
                 >
+                  First Name
+                </label>
                 <div class="mt-2">
                   <input
                     type="text"
@@ -124,8 +120,9 @@
                 <label
                   for="last-name"
                   class="block text-sm font-medium text-gray-900"
-                  >Last Name</label
                 >
+                  Last Name
+                </label>
                 <div class="mt-2">
                   <input
                     type="text"
@@ -142,8 +139,9 @@
                 <label
                   for="email"
                   class="block text-sm font-medium text-gray-900"
-                  >Email Address</label
                 >
+                  Email Address
+                </label>
                 <div class="mt-2">
                   <input
                     id="email"
@@ -152,113 +150,60 @@
                     autocomplete="email"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
                   />
-                </div>
-              </div>
-
-              <!-- Country -->
-              <div class="sm:col-span-3">
-                <label
-                  for="country"
-                  class="block text-sm font-medium text-gray-900"
-                  >Country</label
-                >
-                <div class="mt-2 relative">
-                  <select
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
-                    class="block w-full rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
-                  >
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
-                  </select>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- Univ. Application Information Section -->
-          <div class="border-b border-gray-900/10 pb- 12">
+          <div class="border-b border-gray-900/10 pb-12">
             <h1 class="text-xl font-semibold text-gray-900">
               University Application
             </h1>
             <p class="mt-1 text-sm text-gray-600 mb-4">
-              Choose your prefered plan for the Double Degree program.
+              Choose your preferred plan for the Double Degree program.
             </p>
-            <hr />
             <div class="mt-8 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-              <!-- First Name -->
+              <!-- University Dropdown -->
               <div class="sm:col-span-3">
                 <label
-                  for="first-name"
+                  for="university"
                   class="block text-sm font-medium text-gray-900"
-                  >First Name</label
                 >
-                <div class="mt-2">
-                  <input
-                    type="text"
-                    name="first-name"
-                    id="first-name"
-                    autocomplete="given-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <!-- Last Name -->
-              <div class="sm:col-span-3">
-                <label
-                  for="last-name"
-                  class="block text-sm font-medium text-gray-900"
-                  >Last Name</label
-                >
-                <div class="mt-2">
-                  <input
-                    type="text"
-                    name="last-name"
-                    id="last-name"
-                    autocomplete="family-name"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <!-- Email Address -->
-              <div class="sm:col-span-4">
-                <label
-                  for="email"
-                  class="block text-sm font-medium text-gray-900"
-                  >Email Address</label
-                >
-                <div class="mt-2">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autocomplete="email"
-                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <!-- Country -->
-              <div class="sm:col-span-3">
-                <label
-                  for="country"
-                  class="block text-sm font-medium text-gray-900"
-                  >Country</label
-                >
+                  University
+                </label>
                 <div class="mt-2 relative">
                   <select
-                    id="country"
-                    name="country"
-                    autocomplete="country-name"
+                    id="university"
+                    name="university"
                     class="block w-full rounded-md bg-white py-1.5 pl-3 pr-8 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
                   >
-                    <option>United States</option>
-                    <option>Canada</option>
-                    <option>Mexico</option>
+                    <option value="">Select University</option>
+                    {{ range $uni := .unidegrees }}
+                    <option value="{{ $uni.University.Id }}">
+                      {{ $uni.University.Name }}
+                    </option>
+                    {{ end }}
+                  </select>
+                </div>
+              </div>
+
+              <!-- Degree Dropdown (initially disabled) -->
+              <div class="sm:col-span-3">
+                <label
+                  for="degree"
+                  class="block text-sm font-medium text-gray-900"
+                >
+                  Degree
+                </label>
+                <div class="mt-2 relative">
+                  <select
+                    id="degree"
+                    name="degree"
+                    disabled
+                    class="block w-full rounded-md bg-gray-100 py-1.5 pl-3 pr-8 text-base text-gray-500 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                  >
+                    <!-- Populated by JavaScript -->
                   </select>
                 </div>
               </div>
@@ -280,5 +225,64 @@
         </div>
       </form>
     </main>
+
+    <!-- Scripts -->
+    <script>
+      // Construct a JavaScript object from Go template data
+      var uniDegreesMap = {
+        {{- range $uni := .unidegrees }}
+        "{{ $uni.University.Id }}": [
+          {{- range $deg := $uni.Degrees }}
+          {
+            "id": {{ $deg.Id }},
+            "name": "{{ $deg.Name }}"
+          },
+          {{- end }}
+        ],
+        {{- end }}
+      };
+    </script>
+
+    <script>
+      var universitySelect = document.getElementById("university");
+      var degreeSelect = document.getElementById("degree");
+
+      universitySelect.addEventListener("change", function () {
+        var selectedUniversityId = this.value;
+        degreeSelect.innerHTML = "";
+        degreeSelect.disabled = true; // Disable by default
+
+        if (selectedUniversityId && uniDegreesMap[selectedUniversityId]) {
+          var degrees = uniDegreesMap[selectedUniversityId];
+
+          // Add a placeholder option
+          var placeholder = document.createElement("option");
+          placeholder.value = "";
+          placeholder.textContent = "Select Degree";
+          degreeSelect.appendChild(placeholder);
+
+          degrees.forEach(function (deg) {
+            var opt = document.createElement("option");
+            opt.value = deg.id;
+            opt.textContent = deg.name;
+            degreeSelect.appendChild(opt);
+          });
+
+          // Enable the degree dropdown now that we have options
+          degreeSelect.disabled = false;
+          degreeSelect.classList.remove("bg-gray-100", "text-gray-500");
+          degreeSelect.classList.add("bg-white", "text-gray-900");
+        } else {
+          // No degrees or invalid university means disabled degree select
+          degreeSelect.classList.remove("bg-white", "text-gray-900");
+          degreeSelect.classList.add("bg-gray-100", "text-gray-500");
+
+          var opt = document.createElement("option");
+          opt.value = "";
+          opt.text = "No degrees available";
+          degreeSelect.appendChild(opt);
+        }
+      });
+    </script>
   </body>
 </html>
