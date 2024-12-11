@@ -33,7 +33,11 @@
 
     <!-- Main Content -->
     <main class="flex-grow flex items-center justify-center p-6">
-      <form class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg">
+      <form
+        class="w-full max-w-4xl bg-white p-8 rounded-lg shadow-lg"
+        action="/register"
+        method="POST"
+      >
         <div class="space-y-12">
           <!-- Account Section -->
           <div class="border-b border-gray-900/10 pb-4">
@@ -148,6 +152,25 @@
                     name="email"
                     type="email"
                     autocomplete="email"
+                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
+                  />
+                </div>
+              </div>
+
+              <!-- Batch -->
+              <div class="sm:col-span-4">
+                <label
+                  for="batch"
+                  class="block text-sm font-medium text-gray-900"
+                >
+                  Batch
+                </label>
+                <div class="mt-2">
+                  <input
+                    id="batch"
+                    name="batch"
+                    type="batch"
+                    autocomplete="batch"
                     class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-none focus:outline-2 focus:outline-indigo-600 sm:text-sm"
                   />
                 </div>

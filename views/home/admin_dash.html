@@ -350,41 +350,42 @@
                         </tr>
                       </thead>
                       <tbody class="bg-white">
+                        {{ range .applicationDetails }}
                         <tr class="even:bg-gray-50">
                           <td
                             class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-3"
                           >
-                            John Doe
+                            {{ .User.First_name }} {{ .User.Last_name }}
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            2022
+                            {{ .User.Batch }}
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            doejohn@gmail.com
+                            {{ .User.Email }}
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Asia University
+                            {{ .University.Name }}
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            Computer Science (IoT)
+                            {{ .Degree.Name }}
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            2 Years
+                            {{ .Degree.Duration }} Years
                           </td>
                           <td
                             class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                           >
-                            approved
+                            {{ .Application.Status }}
                           </td>
                           <td
                             class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
@@ -414,6 +415,7 @@
                             >
                           </td>
                         </tr>
+                        {{ end }}
 
                         <!-- More people... -->
                       </tbody>

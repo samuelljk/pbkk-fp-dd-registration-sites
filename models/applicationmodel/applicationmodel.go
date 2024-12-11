@@ -3,6 +3,7 @@ package applicationmodel
 import (
 	"pbkk-fp-dd-registration-sites/config"
 	"pbkk-fp-dd-registration-sites/entities"
+	"time"
 )
 
 func GetUser() []entities.User{
@@ -59,4 +60,38 @@ func GetUniDegreeData() ([]UniversityDegree, error){
 		return nil, err
 	}
 	return UniversityDegrees, nil
+}
+
+func Create(user entities.User, university entities.University, degree entities.Degree) bool {
+	result, err := config.DB.Exec(`
+		INSERT INTO users (
+			username, password, email, first_name, last_name, created_at, updated_at, batch
+		) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`, user.Username, user.Password, user.Email, user.First_name, user.Last_name, time.Now(), time.Now(), user.Batch,
+	)
+	
+	if err != nil {
+		panic(err)
+	}
+
+	lastUserId, err := result.LastInsertId()
+	if err != nil {
+		panic(err)
+	}
+
+	_, err = config.DB.Exec(`
+        INSERT INTO applications (
+            user_id, university_id, degree_id, submitted_at, updated_at
+        ) VALUES (?, ?, ?, ?, ?)`,
+        uint(lastUserId), 
+        university.Id, 
+        degree.Id, 
+        time.Now(), 
+        time.Now(),
+    )
+
+	if err != nil {
+		panic(err)
+	}
+
+	return lastUserId > 0
 }

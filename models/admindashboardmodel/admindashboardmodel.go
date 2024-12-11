@@ -182,6 +182,7 @@ func GetAll() ([]ApplicationDetails, error) {
 			&user.Last_name,
 			&user.Created_at,
 			&user.Updated_at,
+			&user.Batch,
 			&university.Id,
 			&university.Name,
 			&university.Country,

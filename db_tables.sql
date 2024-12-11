@@ -4,7 +4,7 @@ CREATE TABLE Users (
     username VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    batch INT NOT NULL,
+    batch VARCHAR(100) NOT NULL,
     role ENUM('admin', 'student') NOT NULL DEFAULT 'student',
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
