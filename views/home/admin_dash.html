@@ -42,11 +42,6 @@
                   class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                   >Universities</a
                 >
-                <a
-                  href="/admin-user"
-                  class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
-                  >Students</a
-                >
               </div>
             </div>
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
@@ -387,7 +382,7 @@
                           >
                             {{ .Application.Status }}
                           </td>
-                          <td
+                          <!-- <td
                             class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
                           >
                             <a
@@ -395,7 +390,7 @@
                               class="text-indigo-600 hover:text-indigo-900"
                               >Details<span class="sr-only"></span
                             ></a>
-                          </td>
+                          </td> -->
                           <td
                             class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
                           >
@@ -408,10 +403,10 @@
                           <td
                             class="relative whitespace-nowrap py-4 pl-1 pr-1 text-right text-sm font-medium sm:pr-3"
                           >
-                            <a href="#" class="text-red-600 hover:text-red-900"
-                              >Delete<span class="sr-only"
-                                >, Lindsay Walton</span
-                              ></a
+                            <a
+                              href="/admin-dash/delete?id={{ .Application.Id }}"
+                              class="text-red-600 hover:text-red-900"
+                              >Delete</a
                             >
                           </td>
                         </tr>

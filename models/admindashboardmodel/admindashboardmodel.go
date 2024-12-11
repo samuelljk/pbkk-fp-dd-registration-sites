@@ -75,9 +75,10 @@ func GetUniDegree() ([]UniversityDegree, error){
 			dName       string
 			dDepartment string
 			dDuration   uint
+			dDescription string
 		)
 
-		err := rows.Scan(&uID, &uName, &uCountry, &dID, &dUniversityID, &dName, &dDepartment, &dDuration)
+		err := rows.Scan(&uID, &uName, &uCountry, &dID, &dUniversityID, &dName, &dDepartment, &dDuration, &dDescription)
 		if err != nil {
 			return nil, err
 		}
@@ -88,6 +89,7 @@ func GetUniDegree() ([]UniversityDegree, error){
 			Name: dName,
 			Department: dDepartment,
 			Duration: dDuration,
+			Description: dDescription,
 		}
 
 		if uniDegree, exists := universityMap[uID]; exists {
@@ -125,6 +127,41 @@ func AddUni(university entities.University) bool {
 		VALUE (?, ?)`,
 		university.Name,
 		university.Country,
+	)
+
+	if err != nil {
+		panic(err)
+	}
+
+	lastInsertId, err := result.LastInsertId()
+	if err != nil {
+		panic(err)
+	}
+
+	return lastInsertId > 0
+}
+
+func GetUniversityByID(id int) (entities.University, error) {
+	var university entities.University
+
+	row := config.DB.QueryRow("SELECT university_id, name, country FROM universities WHERE university_id = ?", id)
+	err := row.Scan(&university.Id, &university.Name, &university.Country)
+	if err != nil {
+		return university, err
+	}
+
+	return university, nil
+}
+
+func AddDegree(university entities.University, degree entities.Degree) bool {
+	result, err := config.DB.Exec(`
+		INSERT INTO degrees (university_id, degree_name, department, duration, degree_description) 
+		VALUE (?, ?, ?, ?, ?)`,
+		university.Id,
+		degree.Name,
+		degree.Department,
+		degree.Duration,
+		degree.Description,
 	)
 
 	if err != nil {
@@ -206,4 +243,38 @@ func GetAll() ([]ApplicationDetails, error) {
 		return nil, err
 	}
 	return applicationDetails, nil
+}
+
+func Delete(id uint) error {
+	_, err := config.DB.Exec("DELETE FROM applications WHERE application_id = ?", id)
+	return err
+}
+
+func DeleteUni(id uint) error {
+	_, err := config.DB.Exec("DELETE FROM universities WHERE university_id = ?", id)
+	return err
+}
+
+func DeleteDeg(id uint) error {
+	_, err := config.DB.Exec("DELETE FROM degrees WHERE degree_id = ?", id)
+	return err
+}
+
+func UpdateDegree(id uint, degree entities.Degree) bool {
+	query, err := config.DB.Exec(`
+		UPDATE degrees
+		SET degree_name = ?, department = ?, duration = ?
+		WHERE degree_id = ?`,
+		degree.Name, degree.Department, degree.Duration, id,
+	)
+	if err != nil {
+		panic(err)
+	}
+
+	result, err := query.RowsAffected()
+	if err != nil {
+		panic(err)
+	}
+
+	return result > 0
 }

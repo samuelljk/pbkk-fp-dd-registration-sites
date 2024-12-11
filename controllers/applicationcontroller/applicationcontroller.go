@@ -79,7 +79,7 @@ func UniDegreeData (w http.ResponseWriter, r *http.Request) {
 		user.First_name = r.FormValue("first-name")
 		user.Last_name = r.FormValue("last-name")
 		user.Email = r.FormValue("email")
-		user.Batch = r.FormValue("value")
+		user.Batch = r.FormValue("batch")
 		university.Id = uint(universityId)
 		degree.Id = uint(degreeId)
 

@@ -6,7 +6,6 @@ import (
 	"pbkk-fp-dd-registration-sites/config"
 	"pbkk-fp-dd-registration-sites/controllers/admindashboard"
 	"pbkk-fp-dd-registration-sites/controllers/adminuniversity"
-	"pbkk-fp-dd-registration-sites/controllers/adminusercontroller"
 	"pbkk-fp-dd-registration-sites/controllers/applicationcontroller"
 	"pbkk-fp-dd-registration-sites/controllers/homecontroller"
 	"pbkk-fp-dd-registration-sites/controllers/userdashboard"
@@ -30,9 +29,11 @@ func main() {
 	http.HandleFunc("/user-dash", userdashboard.GetData)
 
 	// Admin
-	http.HandleFunc("/admin-user", adminusercontroller.Dashboard)
-	http.HandleFunc("/admin-dash", admindashboard.Dashboard)
 	http.HandleFunc("/admin-uni", adminuniversity.Index)
+	http.HandleFunc("/admin-uni/deleteuni", adminuniversity.DeleteUni)
+	http.HandleFunc("/admin-uni/deletedeg", adminuniversity.DeleteDegree)
+	http.HandleFunc("/admin-dash", admindashboard.Dashboard)
+	http.HandleFunc("/admin-dash/delete", admindashboard.Delete)
 
 	log.Println("Server started on: http://localhost:8080")
 	http.ListenAndServe(":8080", nil)

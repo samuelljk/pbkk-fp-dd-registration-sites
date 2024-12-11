@@ -6,4 +6,5 @@ type Degree struct {
 	Name          string
 	Department    string
 	Duration      uint
+	Description   string
 }
